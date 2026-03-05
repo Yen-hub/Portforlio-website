@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Wanchi Lucia Yen | Thought Leader &amp; AI Advocate</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FACC15",
+                        "forest-dark": "#061A14",
+                        "forest-surface": "#0A251E",
+                        "forest-border": "#12362C",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <link rel="stylesheet" href="lucia.css" />
+
+    <!-- No-JS fallback: reveal all animated elements -->
+    <noscript>
+        <style>
+            [data-animate] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body class="bg-forest-dark text-slate-200 font-sans selection:bg-primary/30 magazine-grid">
+
+    <!-- ═══ NAV ════════════════════════════════════════════════ -->
+    <nav class="fixed top-0 w-full z-50 border-b border-forest-border bg-forest-dark/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center rotate-3">
+                    <span class="text-forest-dark font-black text-sm">WLY</span>
+                </div>
+                <span class="text-2xl font-extrabold font-display text-white tracking-tighter">Wanchi Lucia Yen<span
+                        class="text-primary">.</span></span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wide uppercase">
+                <a class="hover:text-primary transition-colors" href="#story">My Story</a>
+                <a class="hover:text-primary transition-colors" href="#mission">Mission</a>
+                <a class="hover:text-primary transition-colors" href="#talks">Talks &amp; Research</a>
+                <button id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+                    <span class="material-symbols-outlined" id="theme-icon">light_mode</span>
+                </button>
+                <a class="px-6 py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-forest-dark transition-all duration-300"
+                    href="#contact">Let's Work Together</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-40">
+
+        <!-- ═══ HERO ════════════════════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 mb-40 hero-gradient" id="story">
+            <div class="grid lg:grid-cols-12 gap-16 items-center">
+
+                <div class="lg:col-span-8">
+                    <span class="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-6 block" data-animate
+                        style="transition-delay: 60ms">
+                        AI Advocate &amp; Research Leader
+                    </span>
+                    <h1 class="text-6xl md:text-8xl font-display font-extrabold text-white leading-[0.95] mb-10 tracking-tighter text-balance"
+                        data-animate style="transition-delay: 180ms">
+                        Giving a <span class="text-primary">Voice</span> to Every Community.
+                    </h1>
+                    <div class="max-w-2xl space-y-6" data-animate style="transition-delay: 320ms">
+                        <p class="text-xl md:text-2xl text-slate-300 leading-relaxed font-light">
+                            I'm Wanchi Lucia, an AI Research Engineer at CMU Africa dedicated to making technology speak
+                            your language. I don't just build models; I advocate for a world where AI serves everyone,
+                            regardless of the dialect they speak or the signs they use.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <a class="px-8 py-4 bg-primary text-forest-dark font-bold rounded-full text-lg hover:scale-105 transition-transform"
+                                href="#contact">Work with me</a>
+                            <div class="flex items-center gap-4 px-4">
+                                <a class="text-slate-400 hover:text-primary transition-colors" href="#">
+                                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                        </path>
+                                    </svg>
+                                </a>
+                                <a class="text-slate-400 hover:text-primary transition-colors" href="#">
+                                    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z">
+                                        </path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4" data-animate="scale" style="transition-delay: 160ms">
+                    <div class="relative group animate-float">
+                        <div
+                            class="absolute inset-0 bg-primary/20 rounded-[2rem] translate-x-4 translate-y-4 -z-10 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500">
+                        </div>
+                        <img alt="Wanchi Lucia Yen Portrait"
+                            class="w-full h-auto aspect-[4/5] object-cover rounded-[2rem] border-2 border-forest-border shadow-2xl"
+                            src="lucia.jpeg" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ MISSION ══════════════════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 mb-40" id="mission">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="md:col-span-2">
+                    <h2 class="text-4xl md:text-5xl font-display font-extrabold text-white mb-12 flex items-center gap-6"
+                        data-animate>
+                        My Mission <span class="flex-grow h-px bg-forest-border"></span>
+                    </h2>
+                    <div class="grid sm:grid-cols-2 gap-10">
+                        <div class="space-y-4" data-animate style="transition-delay: 100ms">
+                            <div
+                                class="w-12 h-12 bg-forest-surface border border-forest-border rounded-xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">record_voice_over</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Digital Inclusion</h3>
+                            <p class="text-slate-400 leading-relaxed">Breaking the "language barrier" for underserved
+                                communities in Central Africa by teaching computers to understand regional dialects.</p>
+                        </div>
+                        <div class="space-y-4" data-animate style="transition-delay: 220ms">
+                            <div
+                                class="w-12 h-12 bg-forest-surface border border-forest-border rounded-xl flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">accessibility_new</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">Visual Speech</h3>
+                            <p class="text-slate-400 leading-relaxed">Developing real-time translation tools for Sign
+                                Language, ensuring that accessibility is a right, not a luxury.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-forest-surface p-10 rounded-[2rem] border border-forest-border flex flex-col justify-center"
+                    data-animate="scale" style="transition-delay: 80ms">
+                    <div class="text-6xl font-display font-black text-primary mb-2" data-counter>77%</div>
+                    <div class="text-xl font-bold text-white mb-4">Benchmark Breaker</div>
+                    <p class="text-slate-400 text-sm mb-8 leading-relaxed italic">
+                        "We achieved a historic milestone in Central African Sign Language recognition, proving that
+                        specialized AI can outperform generic models."
+                    </p>
+                    <button
+                        class="w-full py-3 bg-white/5 border border-white/10 hover:border-primary text-white font-bold rounded-xl transition-colors">Read
+                        the Story</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ EXCELLENCE ════════════════════════════════════════════ -->
+        <section class="bg-forest-surface/50 py-32 mb-40 border-y border-forest-border">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-20">
+
+                    <div>
+                        <h2 class="text-3xl font-display font-bold text-white mb-10" data-animate>Rooted in Excellence
+                        </h2>
+                        <div class="space-y-12">
+                            <div class="relative pl-10" data-animate="slide-left" style="transition-delay: 100ms">
+                                <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-primary animate-glow-dot">
+                                </div>
+                                <h3 class="text-xl font-bold text-white">Carnegie Mellon University Africa</h3>
+                                <p class="text-primary/80 font-medium">MS in Information Technology, 2024</p>
+                                <p class="text-slate-400 mt-2">Focused on bridging cutting-edge AI with practical impact
+                                    for the African continent.</p>
+                            </div>
+                            <div class="relative pl-10" data-animate="slide-left" style="transition-delay: 240ms">
+                                <div class="absolute left-0 top-1 w-2 h-2 rounded-full bg-slate-600"></div>
+                                <h3 class="text-xl font-bold text-white">Mastercard Foundation Scholar</h3>
+                                <p class="text-slate-400 mt-2">Recognized for leadership potential and academic
+                                    commitment to transformative change.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="p-8 rounded-2xl bg-forest-dark border border-forest-border hover:border-primary/40 transition-all duration-300"
+                            data-animate style="transition-delay: 60ms">
+                            <span class="text-primary font-black text-xs uppercase tracking-widest mb-2 block">Speaker
+                                Topic</span>
+                            <h4 class="text-xl font-bold text-white mb-2">AI for Social Equity</h4>
+                            <p class="text-slate-400 text-sm">How to build ethical foundation models that respect
+                                cultural nuances.</p>
+                        </div>
+                        <div class="p-8 rounded-2xl bg-forest-dark border border-forest-border hover:border-primary/40 transition-all duration-300"
+                            data-animate style="transition-delay: 180ms">
+                            <span class="text-primary font-black text-xs uppercase tracking-widest mb-2 block">Speaker
+                                Topic</span>
+                            <h4 class="text-xl font-bold text-white mb-2">Future of Mobile Voice</h4>
+                            <p class="text-slate-400 text-sm">Deploying lightweight AI that works on every smartphone,
+                                everywhere.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ TALKS ═════════════════════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 mb-40" id="talks">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6" data-animate>
+                <h2 class="text-5xl font-display font-extrabold text-white">Latest from the Field</h2>
+                <p class="text-slate-400 max-w-sm">Sharing insights from my research labs and global stages to
+                    democratize AI knowledge.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div class="group" data-animate style="transition-delay: 60ms">
+                    <div class="aspect-[16/10] mb-8 overflow-hidden rounded-[2rem] border border-forest-border">
+                        <img alt="Interspeech 2026 Submission"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQr1f8zOA7IxEQexLCaMn-JVP3U-wWVnBsb4K1SYAKBxrByx-rU6EZ0DkqxjoAAT_gHDig2LJfO35l1j8MuE_RdlRBzHT5K2B4_BH8sBMIZBAM3HIJFOzT5VGvE8JooTrf2Wbu59YtOmQOk9AnyRKDigPg5PIkajeCuC0cq5ZPs39Jn25EBY5AY0y32NMWVEDfaSK7G65DYmNJFr7QDUj_WR2lf56ya3rBgyu5qWCaOxvkLvy80CAk5MekXYLezCT1yIsAn5vdlece" />
+                    </div>
+                    <span
+                        class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Conference
+                        Paper</span>
+                    <h3 class="text-2xl font-bold text-white mt-4 mb-3 group-hover:text-primary transition-colors">
+                        Teaching AI Bantu Languages</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">A deep dive into cross-lingual learning—how knowledge
+                        from one language helps AI learn another faster.</p>
+                    <a class="inline-flex items-center gap-2 font-bold text-white hover:gap-4 transition-all"
+                        href="#">Explore Research <span
+                            class="material-symbols-outlined text-primary">trending_flat</span></a>
+                </div>
+
+                <div class="group" data-animate style="transition-delay: 180ms">
+                    <div class="aspect-[16/10] mb-8 overflow-hidden rounded-[2rem] border border-forest-border">
+                        <img alt="Robotics Project"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqngzYFVfaneBKq92fXaH27hYanPY0hdFUI6bppbs_lFk44v4eEpk9RbU6yQ7LIPC97HGnyKX6fbLOcl3T7s6zHWEE_mtN2qQJ-GjvvSveBnYsS8FI8RLkga0rQbl_4cvHud1UCPv9_1-BMHSHMZU9warE3cxOn1B7ioRgfaUXBkEpMpRgwKlytdoR-skpRzvAQWLf6YgqzH4rQjwMc5oHdPzMumEn96VvSQzPwqeUvwzbHQGuTqPMOhXyTrBvC0jVYurXXvltYxGH" />
+                    </div>
+                    <span
+                        class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Innovation</span>
+                    <h3 class="text-2xl font-bold text-white mt-4 mb-3 group-hover:text-primary transition-colors">Voice
+                        for Every Phone</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Designing "SwiftTTS"—a super-fast speech engine that
+                        works without high-end hardware.</p>
+                    <a class="inline-flex items-center gap-2 font-bold text-white hover:gap-4 transition-all"
+                        href="#">See Demo <span class="material-symbols-outlined text-primary">trending_flat</span></a>
+                </div>
+
+                <div class="group" data-animate style="transition-delay: 300ms">
+                    <div class="aspect-[16/10] mb-8 overflow-hidden rounded-[2rem] border border-forest-border">
+                        <img alt="Multimodal Research"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVDCPHXcGdmShmuvTylfAJwfqmTY9hhZ9c9I-eHnZ7QKYaQjg7qvy50TyrhGvpADTLiFFZ-H-e0epispaBXCr1RlOzFoWFOxh3gUuf9s1jth5-Mkmsi2i_9X-qAz79O2oKSYg0q14eIDkyCWAD2eVWxIN8PO64xNUhDt_TFeu5J5xWF81Tvyl9M03X4BuGH5VGJ1WXRT3Piw2UmmTmeJKxhPfotmwcHiTVkx6pZX19iow2l_eweK2usXJKdjEzlVpUwJCx_1Pe-GID" />
+                    </div>
+                    <span
+                        class="text-xs font-bold text-primary uppercase tracking-widest bg-primary/10 px-3 py-1 rounded-full">Advocacy</span>
+                    <h3 class="text-2xl font-bold text-white mt-4 mb-3 group-hover:text-primary transition-colors">Eyes
+                        that can Hear</h3>
+                    <p class="text-slate-400 leading-relaxed mb-6">Advanced lip-reading algorithms that work in the real
+                        world, helping people communicate in noisy settings.</p>
+                    <a class="inline-flex items-center gap-2 font-bold text-white hover:gap-4 transition-all"
+                        href="#">Learn More <span
+                            class="material-symbols-outlined text-primary">trending_flat</span></a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ CONTACT ═══════════════════════════════════════════════ -->
+        <section class="max-w-7xl mx-auto px-6 mb-20" id="contact">
+            <div class="bg-forest-surface rounded-[3rem] overflow-hidden border border-forest-border grid lg:grid-cols-2"
+                data-animate>
+                <div class="p-12 lg:p-20 space-y-10">
+                    <h2 class="text-5xl font-display font-extrabold text-white leading-tight">Let's create <br />impact
+                        together.</h2>
+                    <p class="text-xl text-slate-400 font-light">Available for keynote speaking, research
+                        collaborations, and educational workshops on AI &amp; Accessibility.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-forest-dark border border-forest-border flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">alternate_email</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Direct Inquiries
+                                </p>
+                                <p class="text-white text-lg">wlyen@andrew.cmu.edu</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-6">
+                            <div
+                                class="w-14 h-14 rounded-2xl bg-forest-dark border border-forest-border flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined">public</span>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500">Based In</p>
+                                <p class="text-white text-lg">Kigali, Rwanda • Worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-forest-dark p-12 lg:p-20 border-l border-forest-border">
+                    <form class="space-y-8">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-400 uppercase tracking-widest">Full Name</label>
+                            <input
+                                class="w-full bg-forest-surface border-forest-border rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary p-5 text-white placeholder-slate-600"
+                                placeholder="e.g. Jane Cooper" type="text" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-400 uppercase tracking-widest">Work Email</label>
+                            <input
+                                class="w-full bg-forest-surface border-forest-border rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary p-5 text-white placeholder-slate-600"
+                                placeholder="jane@company.com" type="email" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-400 uppercase tracking-widest">How can we
+                                partner?</label>
+                            <textarea
+                                class="w-full bg-forest-surface border-forest-border rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary p-5 text-white placeholder-slate-600"
+                                placeholder="I'd love to discuss..." rows="4"></textarea>
+                        </div>
+                        <button
+                            class="w-full py-5 bg-primary text-forest-dark font-black rounded-2xl text-lg hover:shadow-[0_0_20px_rgba(250,204,21,0.3)] transition-all"
+                            type="submit">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+    <footer class="border-t border-forest-border py-20">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center rotate-3">
+                    <span class="text-forest-dark font-black text-sm">WLY</span>
+                </div>
+                <span class="text-xl font-bold text-white tracking-tighter">Wanchi Lucia Yen<span
+                        class="text-primary">.</span></span>
+            </div>
+            <p class="text-sm text-slate-500 text-center font-medium">
+                © 2024 Wanchi Lucia Yen. Empowering communities through inclusive AI design.
+            </p>
+            <div class="flex gap-8">
+                <a class="text-slate-400 hover:text-primary transition-colors font-bold uppercase text-xs tracking-widest"
+                    href="#">LinkedIn</a>
+                <a class="text-slate-400 hover:text-primary transition-colors font-bold uppercase text-xs tracking-widest"
+                    href="#">GitHub</a>
+                <a class="text-slate-400 hover:text-primary transition-colors font-bold uppercase text-xs tracking-widest"
+                    href="#">Scholar</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /* ═══════════════════════════════════════════════════════════
+           THEME TOGGLE
+           ═══════════════════════════════════════════════════════════ */
+        (function () {
+            const html = document.documentElement;
+            const toggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+
+            // Apply saved preference (default: dark)
+            const saved = localStorage.getItem('lucia-theme') || 'dark';
+            if (saved === 'light') {
+                html.classList.remove('dark');
+                themeIcon.textContent = 'dark_mode';
+            } else {
+                html.classList.add('dark');
+                themeIcon.textContent = 'light_mode';
+            }
+
+            toggleBtn.addEventListener('click', function () {
+                const isDark = html.classList.contains('dark');
+
+                // Brief spin animation on the icon
+                toggleBtn.classList.add('spinning');
+                setTimeout(function () { toggleBtn.classList.remove('spinning'); }, 380);
+
+                if (isDark) {
+                    html.classList.remove('dark');
+                    themeIcon.textContent = 'dark_mode';
+                    localStorage.setItem('lucia-theme', 'light');
+                } else {
+                    html.classList.add('dark');
+                    themeIcon.textContent = 'light_mode';
+                    localStorage.setItem('lucia-theme', 'dark');
+                }
+            });
+        })();
+
+        /* ═══════════════════════════════════════════════════════════
+           SCROLL-TRIGGERED ENTRANCE ANIMATIONS
+           ═══════════════════════════════════════════════════════════ */
+        (function () {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -36px 0px' });
+
+            document.querySelectorAll('[data-animate]').forEach(function (el) {
+                observer.observe(el);
+            });
+        })();
+
+        /* ═══════════════════════════════════════════════════════════
+           ANIMATED COUNTER  (77%)
+           ═══════════════════════════════════════════════════════════ */
+        (function () {
+            var counterEl = document.querySelector('[data-counter]');
+            if (!counterEl) return;
+
+            var counterObserver = new IntersectionObserver(function (entries) {
+                if (!entries[0].isIntersecting) return;
+                counterObserver.unobserve(counterEl);
+
+                var start = null;
+                var target = 77;
+                var duration = 1600;
+
+                function step(ts) {
+                    if (!start) start = ts;
+                    var progress = Math.min((ts - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                    counterEl.textContent = Math.floor(eased * target) + '%';
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            }, { threshold: 0.55 });
+
+            counterObserver.observe(counterEl);
+        })();
+
+        /* ═══════════════════════════════════════════════════════════
+           NAV SCROLL SHADOW
+           ═══════════════════════════════════════════════════════════ */
+        (function () {
+            var nav = document.querySelector('nav');
+            window.addEventListener('scroll', function () {
+                nav.style.boxShadow = window.scrollY > 20
+                    ? '0 4px 32px rgba(0,0,0,0.1)'
+                    : 'none';
+            }, { passive: true });
+        })();
+    </script>
+
+</body>
+
+</html>

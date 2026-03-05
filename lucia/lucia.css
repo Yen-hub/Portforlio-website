@@ -1,0 +1,191 @@
+/* ═══════════════════════════════════════════════════════════════
+   lucia.css — Styles for Wanchi Lucia Yen portfolio
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ── Global ──────────────────────────────────────────────────── */
+
+html { scroll-behavior: smooth; }
+
+
+/* ── Custom utility classes ─────────────────────────────────── */
+
+.magazine-grid {
+    background-image: radial-gradient(circle at 1px 1px, #12362C 1px, transparent 0);
+    background-size: 60px 60px;
+}
+
+.text-balance { text-wrap: balance; }
+
+.hero-gradient {
+    background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.05), transparent 60%);
+}
+
+
+/* ── Animation keyframes ─────────────────────────────────────── */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%      { transform: translateY(-12px); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 6px rgba(250, 204, 21, 0.35); }
+    50%      { box-shadow: 0 0 18px rgba(250, 204, 21, 0.75); }
+}
+
+
+/* ── Continuous animation classes ────────────────────────────── */
+
+.animate-float    { animation: float     7s   ease-in-out infinite; }
+.animate-glow-dot { animation: pulseGlow 2.8s ease-in-out infinite; }
+
+
+/* ── Scroll-triggered entrance animations ────────────────────── */
+
+[data-animate] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity   0.72s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate="slide-left"] { transform: translateX(-26px); }
+[data-animate="scale"]      { transform: scale(0.93) translateY(14px); }
+
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0) scale(1);
+}
+
+
+/* ── Accessibility: honour reduced-motion preference ─────────── */
+
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .animate-float,
+    .animate-glow-dot { animation: none !important; }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   THEME TOKENS
+   Light values live on :root; dark values override on .dark.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+    --th-bg:             #F7F4EE;
+    --th-surface:        #EDE9E1;
+    --th-border:         #D5CFC2;
+    --th-text:           #111B15;
+    --th-text-secondary: #2E4A3C;
+    --th-text-muted:     #527060;
+    --th-text-subtle:    #7A9888;
+    --th-primary-text:   #9A7000; /* darker gold keeps contrast on light bg */
+    --th-grid-dot:       #D5CFC2;
+}
+
+.dark {
+    --th-bg:             #061A14;
+    --th-surface:        #0A251E;
+    --th-border:         #12362C;
+    --th-text:           #E2E8F0;
+    --th-text-secondary: #CBD5E1;
+    --th-text-muted:     #94A3B8;
+    --th-text-subtle:    #64748B;
+    --th-primary-text:   #FACC15;
+    --th-grid-dot:       #12362C;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   LIGHT THEME OVERRIDES
+   html:not(.dark) + attribute selector gives higher specificity
+   than Tailwind's single-class rules — no !important required.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Body baseline */
+html:not(.dark) body {
+    background-color: var(--th-bg);
+    color: var(--th-text);
+}
+
+/* Dot grid & hero gradient */
+html:not(.dark) .magazine-grid {
+    background-image: radial-gradient(circle at 1px 1px, var(--th-grid-dot) 1px, transparent 0);
+}
+html:not(.dark) .hero-gradient {
+    background: radial-gradient(circle at top right, rgba(212, 168, 0, 0.07), transparent 60%);
+}
+
+/* Backgrounds */
+html:not(.dark) [class~="bg-forest-dark"]       { background-color: var(--th-bg); }
+html:not(.dark) [class~="bg-forest-dark/90"]    { background-color: rgba(247, 244, 238, 0.92); }
+html:not(.dark) [class~="bg-forest-surface"]    { background-color: var(--th-surface); }
+html:not(.dark) [class~="bg-forest-surface/50"] { background-color: rgba(237, 233, 225, 0.5); }
+
+/* Borders */
+html:not(.dark) [class~="border-forest-border"] { border-color: var(--th-border); }
+
+/* Text */
+html:not(.dark) [class~="text-white"]     { color: var(--th-text); }
+html:not(.dark) [class~="text-slate-200"] { color: var(--th-text-secondary); }
+html:not(.dark) [class~="text-slate-300"] { color: var(--th-text-muted); }
+html:not(.dark) [class~="text-slate-400"] { color: var(--th-text-muted); }
+html:not(.dark) [class~="text-slate-500"] { color: var(--th-text-subtle); }
+
+/* Primary — slightly darker gold for readable contrast on cream */
+html:not(.dark) [class~="text-primary"]    { color: var(--th-primary-text); }
+html:not(.dark) [class~="text-primary/80"] { color: rgba(154, 112, 0, 0.8); }
+
+/* Keep dark text on golden button backgrounds */
+html:not(.dark) [class~="text-forest-dark"] { color: #061A14; }
+
+/* Dark-mode white-alpha utilities */
+html:not(.dark) [class~="bg-white/5"]      { background-color: rgba(0, 0, 0, 0.04); }
+html:not(.dark) [class~="border-white/10"] { border-color: rgba(0, 0, 0, 0.08); }
+
+/* Form inputs */
+html:not(.dark) input,
+html:not(.dark) textarea { color: var(--th-text); }
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder { color: var(--th-text-subtle); }
+
+
+/* ═══════════════════════════════════════════════════════════════
+   THEME TOGGLE BUTTON
+   ═══════════════════════════════════════════════════════════════ */
+
+#theme-toggle {
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+
+#theme-toggle:hover {
+    background-color: rgba(250, 204, 21, 0.12);
+    border-color: rgba(250, 204, 21, 0.25);
+}
+
+#theme-toggle .material-symbols-outlined {
+    font-size: 1.2rem;
+    color: #64748B;
+    transition: color 0.18s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+html:not(.dark) #theme-toggle .material-symbols-outlined { color: var(--th-text-muted); }
+#theme-toggle:hover       .material-symbols-outlined     { color: #FACC15; }
+#theme-toggle.spinning    .material-symbols-outlined     { transform: rotate(180deg); }
