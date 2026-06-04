@@ -1,172 +1,117 @@
-/* ═══════════════════════════════════════════════════════════════
-   lucia.css — Styles for Wanchi Lucia Yen portfolio
-   ═══════════════════════════════════════════════════════════════ */
-
-
-/* ── Global ──────────────────────────────────────────────────── */
-
-html { scroll-behavior: smooth; }
-
-
-/* ── Custom utility classes ─────────────────────────────────── */
+html {
+    scroll-behavior: smooth;
+}
 
 .magazine-grid {
     background-image: radial-gradient(circle at 1px 1px, #12362C 1px, transparent 0);
     background-size: 60px 60px;
 }
 
-.text-balance { text-wrap: balance; }
+.text-balance {
+    text-wrap: balance;
+}
 
 .hero-gradient {
     background: radial-gradient(circle at top right, rgba(250, 204, 21, 0.05), transparent 60%);
 }
 
-
-/* ── Animation keyframes ─────────────────────────────────────── */
-
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50%      { transform: translateY(-12px); }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
 }
 
 @keyframes pulseGlow {
     0%, 100% { box-shadow: 0 0 6px rgba(250, 204, 21, 0.35); }
-    50%      { box-shadow: 0 0 18px rgba(250, 204, 21, 0.75); }
+    50% { box-shadow: 0 0 18px rgba(250, 204, 21, 0.75); }
 }
 
+.animate-float {
+    animation: float 7s ease-in-out infinite;
+}
 
-/* ── Continuous animation classes ────────────────────────────── */
-
-.animate-float    { animation: float     7s   ease-in-out infinite; }
-.animate-glow-dot { animation: pulseGlow 2.8s ease-in-out infinite; }
-
-
-/* ── Scroll-triggered entrance animations ────────────────────── */
+.animate-glow-dot {
+    animation: pulseGlow 2.8s ease-in-out infinite;
+}
 
 [data-animate] {
     opacity: 0;
     transform: translateY(26px);
     transition:
-        opacity   0.72s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
         transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-[data-animate="slide-left"] { transform: translateX(-26px); }
-[data-animate="scale"]      { transform: scale(0.93) translateY(14px); }
+[data-animate="slide-left"] {
+    transform: translateX(-26px);
+}
+
+[data-animate="scale"] {
+    transform: scale(0.93) translateY(14px);
+}
 
 [data-animate].is-visible {
     opacity: 1;
     transform: translateY(0) translateX(0) scale(1);
 }
 
-
-/* ── Accessibility: honour reduced-motion preference ─────────── */
-
-@media (prefers-reduced-motion: reduce) {
-    [data-animate] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
-    .animate-float,
-    .animate-glow-dot { animation: none !important; }
-}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   THEME TOKENS
-   Light values live on :root; dark values override on .dark.
-   ═══════════════════════════════════════════════════════════════ */
-
 :root {
-    --th-bg:             #F7F4EE;
-    --th-surface:        #EDE9E1;
-    --th-border:         #D5CFC2;
-    --th-text:           #111B15;
+    --th-bg: #F7F4EE;
+    --th-surface: #EDE9E1;
+    --th-border: #D5CFC2;
+    --th-text: #111B15;
     --th-text-secondary: #2E4A3C;
-    --th-text-muted:     #527060;
-    --th-text-subtle:    #7A9888;
-    --th-primary-text:   #9A7000; /* darker gold keeps contrast on light bg */
-    --th-grid-dot:       #D5CFC2;
+    --th-text-muted: #527060;
+    --th-text-subtle: #7A9888;
+    --th-primary-text: #9A7000;
+    --th-grid-dot: #D5CFC2;
 }
 
 .dark {
-    --th-bg:             #061A14;
-    --th-surface:        #0A251E;
-    --th-border:         #12362C;
-    --th-text:           #E2E8F0;
+    --th-bg: #061A14;
+    --th-surface: #0A251E;
+    --th-border: #12362C;
+    --th-text: #E2E8F0;
     --th-text-secondary: #CBD5E1;
-    --th-text-muted:     #94A3B8;
-    --th-text-subtle:    #64748B;
-    --th-primary-text:   #FACC15;
-    --th-grid-dot:       #12362C;
+    --th-text-muted: #94A3B8;
+    --th-text-subtle: #64748B;
+    --th-primary-text: #FACC15;
+    --th-grid-dot: #12362C;
 }
 
-
-/* ═══════════════════════════════════════════════════════════════
-   LIGHT THEME OVERRIDES
-   html:not(.dark) + attribute selector gives higher specificity
-   than Tailwind's single-class rules — no !important required.
-   ═══════════════════════════════════════════════════════════════ */
-
-/* Body baseline */
 html:not(.dark) body {
     background-color: var(--th-bg);
     color: var(--th-text);
 }
 
-/* Dot grid & hero gradient */
 html:not(.dark) .magazine-grid {
     background-image: radial-gradient(circle at 1px 1px, var(--th-grid-dot) 1px, transparent 0);
 }
+
 html:not(.dark) .hero-gradient {
     background: radial-gradient(circle at top right, rgba(212, 168, 0, 0.07), transparent 60%);
 }
 
-/* Backgrounds */
-html:not(.dark) [class~="bg-forest-dark"]       { background-color: var(--th-bg); }
-html:not(.dark) [class~="bg-forest-dark/90"]    { background-color: rgba(247, 244, 238, 0.92); }
-html:not(.dark) [class~="bg-forest-surface"]    { background-color: var(--th-surface); }
+html:not(.dark) [class~="bg-forest-dark"] { background-color: var(--th-bg); }
+html:not(.dark) [class~="bg-forest-dark/90"] { background-color: rgba(247, 244, 238, 0.92); }
+html:not(.dark) [class~="bg-forest-surface"] { background-color: var(--th-surface); }
 html:not(.dark) [class~="bg-forest-surface/50"] { background-color: rgba(237, 233, 225, 0.5); }
-
-/* Borders */
 html:not(.dark) [class~="border-forest-border"] { border-color: var(--th-border); }
-
-/* Text */
-html:not(.dark) [class~="text-white"]     { color: var(--th-text); }
+html:not(.dark) [class~="text-white"] { color: var(--th-text); }
 html:not(.dark) [class~="text-slate-200"] { color: var(--th-text-secondary); }
-html:not(.dark) [class~="text-slate-300"] { color: var(--th-text-muted); }
+html:not(.dark) [class~="text-slate-300"],
 html:not(.dark) [class~="text-slate-400"] { color: var(--th-text-muted); }
 html:not(.dark) [class~="text-slate-500"] { color: var(--th-text-subtle); }
-
-/* Primary — slightly darker gold for readable contrast on cream */
-html:not(.dark) [class~="text-primary"]    { color: var(--th-primary-text); }
+html:not(.dark) [class~="text-primary"] { color: var(--th-primary-text); }
 html:not(.dark) [class~="text-primary/80"] { color: rgba(154, 112, 0, 0.8); }
-
-/* Keep dark text on golden button backgrounds */
 html:not(.dark) [class~="text-forest-dark"] { color: #061A14; }
-
-/* Dark-mode white-alpha utilities */
-html:not(.dark) [class~="bg-white/5"]      { background-color: rgba(0, 0, 0, 0.04); }
+html:not(.dark) [class~="bg-white/5"] { background-color: rgba(0, 0, 0, 0.04); }
 html:not(.dark) [class~="border-white/10"] { border-color: rgba(0, 0, 0, 0.08); }
 
-/* Form inputs */
-html:not(.dark) input,
-html:not(.dark) textarea { color: var(--th-text); }
-
-html:not(.dark) input::placeholder,
-html:not(.dark) textarea::placeholder { color: var(--th-text-subtle); }
-
-
-/* ═══════════════════════════════════════════════════════════════
-   THEME TOGGLE BUTTON
-   ═══════════════════════════════════════════════════════════════ */
-
-#theme-toggle {
+.theme-toggle {
     width: 2.4rem;
     height: 2.4rem;
     border-radius: 9999px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -175,17 +120,410 @@ html:not(.dark) textarea::placeholder { color: var(--th-text-subtle); }
     transition: background-color 0.18s ease, border-color 0.18s ease;
 }
 
-#theme-toggle:hover {
+.theme-toggle:hover {
     background-color: rgba(250, 204, 21, 0.12);
     border-color: rgba(250, 204, 21, 0.25);
 }
 
-#theme-toggle .material-symbols-outlined {
-    font-size: 1.2rem;
+.theme-toggle .material-symbols-outlined {
+    font-size: 1.25rem;
     color: #64748B;
     transition: color 0.18s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-html:not(.dark) #theme-toggle .material-symbols-outlined { color: var(--th-text-muted); }
-#theme-toggle:hover       .material-symbols-outlined     { color: #FACC15; }
-#theme-toggle.spinning    .material-symbols-outlined     { transform: rotate(180deg); }
+.theme-toggle:hover .material-symbols-outlined {
+    color: #FACC15;
+}
+
+.theme-toggle.spinning .material-symbols-outlined {
+    transform: rotate(180deg);
+}
+
+.social-link {
+    color: #94A3B8;
+    transition: color 0.18s ease;
+}
+
+.social-link:hover {
+    color: #FACC15;
+}
+
+.stat-tile,
+.feature-card,
+.compact-card,
+.research-card,
+.competition-card {
+    background-color: #0A251E;
+    border: 1px solid #12362C;
+}
+
+.stat-tile {
+    border-radius: 1rem;
+    padding: 1.2rem;
+}
+
+.stat-tile strong {
+    display: block;
+    color: #FACC15;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.stat-tile span {
+    display: block;
+    color: #94A3B8;
+    font-size: 0.85rem;
+    margin-top: 0.55rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: #fff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.2rem);
+    font-weight: 800;
+    margin-bottom: 3rem;
+}
+
+.section-title span {
+    flex: 1;
+    height: 1px;
+    background-color: #12362C;
+}
+
+.section-kicker {
+    color: #FACC15;
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.icon-box {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.85rem;
+    border: 1px solid #12362C;
+    background-color: #0A251E;
+    color: #FACC15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-card {
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+}
+
+.timeline {
+    display: grid;
+    gap: 2rem;
+}
+
+.timeline article {
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.timeline article::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 9999px;
+    background: #FACC15;
+    box-shadow: 0 0 18px rgba(250, 204, 21, 0.45);
+}
+
+.timeline h3,
+.compact-card h3,
+.research-card h3,
+.competition-card h3 {
+    color: #fff;
+    font-weight: 800;
+}
+
+.timeline h3 {
+    font-size: 1.25rem;
+}
+
+.timeline p,
+.compact-card p,
+.research-card p,
+.competition-card p {
+    color: #94A3B8;
+    line-height: 1.7;
+}
+
+.compact-card {
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.compact-card span,
+.research-card span,
+.competition-card span {
+    color: #FACC15;
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+}
+
+.research-card {
+    border-radius: 1.25rem;
+    padding: 1.75rem;
+}
+
+.research-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+.research-card ul {
+    color: #CBD5E1;
+    display: grid;
+    gap: 0.65rem;
+    list-style: none;
+    margin-top: 1.25rem;
+    padding: 0;
+}
+
+.research-card li {
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.research-card li::before {
+    content: "";
+    background: #FACC15;
+    border-radius: 999px;
+    height: 0.35rem;
+    left: 0;
+    position: absolute;
+    top: 0.65rem;
+    width: 0.35rem;
+}
+
+.research-card a {
+    color: #fff;
+    font-weight: 800;
+    transition: color 0.18s ease;
+}
+
+.research-card a:hover {
+    color: #FACC15;
+}
+
+.competition-card {
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.competition-card img {
+    aspect-ratio: 16 / 10;
+    background: #fff;
+    object-fit: cover;
+    width: 100%;
+}
+
+.competition-card > div {
+    padding: 1.5rem;
+}
+
+.competition-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.competition-card a,
+.footer-link,
+.document-link {
+    color: #fff;
+    font-weight: 800;
+    transition: color 0.18s ease;
+}
+
+.competition-card a {
+    display: inline-flex;
+    margin-top: 1rem;
+}
+
+.competition-card a:hover,
+.footer-link:hover,
+.document-link:hover {
+    color: #FACC15;
+}
+
+.no-image {
+    justify-content: space-between;
+}
+
+.award-mark {
+    align-items: center;
+    aspect-ratio: 16 / 10;
+    background:
+        radial-gradient(circle at 70% 30%, rgba(250, 204, 21, 0.16), transparent 36%),
+        linear-gradient(135deg, #0A251E, #061A14);
+    display: flex;
+    justify-content: center;
+}
+
+.award-mark .material-symbols-outlined {
+    color: #FACC15;
+    font-size: 6rem;
+}
+
+.contact-row {
+    align-items: center;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.contact-row > div:first-child {
+    align-items: center;
+    background-color: #061A14;
+    border: 1px solid #12362C;
+    border-radius: 1rem;
+    color: #FACC15;
+    display: flex;
+    height: 3.5rem;
+    justify-content: center;
+    width: 3.5rem;
+}
+
+.contact-row p {
+    color: #64748B;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-row a,
+.contact-row span {
+    color: #fff;
+    font-size: 1.05rem;
+}
+
+.document-link {
+    border: 1px solid #12362C;
+    border-radius: 9999px;
+    padding: 0.75rem 1rem;
+}
+
+.form-label {
+    color: #94A3B8;
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.form-field {
+    background-color: #0A251E;
+    border-color: #12362C;
+    border-radius: 1rem;
+    color: #fff;
+    padding: 1.15rem;
+    width: 100%;
+}
+
+.form-field::placeholder {
+    color: #64748B;
+}
+
+.form-field:focus {
+    border-color: #FACC15;
+    box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.35);
+    outline: none;
+}
+
+.mobile-menu a {
+    color: #CBD5E1;
+}
+
+.mobile-menu a:hover {
+    color: #FACC15;
+}
+
+html:not(.dark) .stat-tile,
+html:not(.dark) .feature-card,
+html:not(.dark) .compact-card,
+html:not(.dark) .research-card,
+html:not(.dark) .competition-card,
+html:not(.dark) .icon-box,
+html:not(.dark) .form-field {
+    background-color: var(--th-surface);
+    border-color: var(--th-border);
+}
+
+html:not(.dark) .timeline h3,
+html:not(.dark) .compact-card h3,
+html:not(.dark) .research-card h3,
+html:not(.dark) .competition-card h3,
+html:not(.dark) .section-title,
+html:not(.dark) .contact-row a,
+html:not(.dark) .contact-row span,
+html:not(.dark) .competition-card a,
+html:not(.dark) .research-card a,
+html:not(.dark) .footer-link,
+html:not(.dark) .document-link {
+    color: var(--th-text);
+}
+
+html:not(.dark) .timeline p,
+html:not(.dark) .compact-card p,
+html:not(.dark) .research-card p,
+html:not(.dark) .competition-card p,
+html:not(.dark) .stat-tile span {
+    color: var(--th-text-muted);
+}
+
+html:not(.dark) .contact-row > div:first-child {
+    background-color: var(--th-bg);
+    border-color: var(--th-border);
+}
+
+html:not(.dark) .award-mark {
+    background:
+        radial-gradient(circle at 70% 30%, rgba(154, 112, 0, 0.18), transparent 36%),
+        linear-gradient(135deg, #EDE9E1, #F7F4EE);
+}
+
+html:not(.dark) .mobile-menu {
+    background-color: var(--th-bg);
+}
+
+html:not(.dark) .mobile-menu a {
+    color: var(--th-text);
+}
+
+html:not(.dark) .form-field {
+    color: var(--th-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .animate-float,
+    .animate-glow-dot {
+        animation: none !important;
+    }
+}
