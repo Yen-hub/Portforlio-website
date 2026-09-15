@@ -263,6 +263,32 @@ html:not(.dark) [class~="border-white/10"] { border-color: rgba(0, 0, 0, 0.08); 
     line-height: 1.7;
 }
 
+.timeline ul {
+    color: #CBD5E1;
+    display: grid;
+    gap: 0.7rem;
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.timeline li {
+    line-height: 1.65;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.timeline li::before {
+    content: "";
+    background: #FACC15;
+    border-radius: 999px;
+    height: 0.35rem;
+    left: 0;
+    position: absolute;
+    top: 0.65rem;
+    width: 0.35rem;
+}
+
 .compact-card {
     border-radius: 1rem;
     padding: 1.5rem;
@@ -288,6 +314,16 @@ html:not(.dark) [class~="border-white/10"] { border-color: rgba(0, 0, 0, 0.08); 
 .research-card h3 {
     font-size: 1.35rem;
     margin-bottom: 1rem;
+}
+
+.research-card .author-line {
+    color: #CBD5E1;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.research-card .author-line strong {
+    color: #FACC15;
 }
 
 .research-card ul {
@@ -335,7 +371,7 @@ html:not(.dark) [class~="border-white/10"] { border-color: rgba(0, 0, 0, 0.08); 
 .competition-card img {
     aspect-ratio: 16 / 10;
     background: #fff;
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
 }
 
@@ -485,10 +521,15 @@ html:not(.dark) .document-link {
 }
 
 html:not(.dark) .timeline p,
+html:not(.dark) .timeline ul,
 html:not(.dark) .compact-card p,
 html:not(.dark) .research-card p,
 html:not(.dark) .competition-card p,
 html:not(.dark) .stat-tile span {
+    color: var(--th-text-muted);
+}
+
+html:not(.dark) .research-card .author-line {
     color: var(--th-text-muted);
 }
 
