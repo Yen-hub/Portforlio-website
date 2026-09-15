@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yen-hub.github.io/Portforlio-website/sitemap.xml
+Sitemap: https://yen-hub.github.io/Portfolio-website/sitemap.xml
