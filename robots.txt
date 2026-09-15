@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yen-hub.github.io/Portforlio-website/sitemap.xml
